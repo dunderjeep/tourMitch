@@ -7,4 +7,14 @@
         "longitude": -76.496157,
         "description": "The main Library located on Queens Campus"
     }
+	,
+	{
+        "latitude": 44.225472,
+        "date": {
+            "$date": 1338854400
+        },
+        "name": "Victoria Hall",
+        "longitude": -76.498696,
+        "description": "The main Residence located on Queens Campus"
+    }
 	]
