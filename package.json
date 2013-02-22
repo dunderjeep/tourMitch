@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "name": "nodejs-mongodb-poc",
+  "version": "0.0.1",
+  "description": "Sample Node.js MongoDB Application",
   "keywords": [
     "OpenShift",
     "Node.js",
@@ -9,14 +9,14 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
+    "name": "Lou Sacco",
+    "email": "occasl@gmail.com",
     "url":  "http://openshift.redhat.com/"
   },
-  "homepage": "http://openshift.redhat.com/",
+  "homepage": "http://pettracker-loutilities.rhcloud.com/",
   "repository": {
     "type": "git",
-    "url": "https://gitub.com/openshift/origin-server"
+    "url": "https://gitub.com/occasl/mongodb-poc"
   },
 
   "engines": {
@@ -25,6 +25,8 @@
   },
 
   "dependencies": {
+    "mongoose": "3.0.0",
+    "express": "3.0.0rc2"
   },
   "devDependencies": {},
   "bundleDependencies": [],
