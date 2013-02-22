@@ -23,10 +23,10 @@ var app = express();
 //  Get the environment variables we need.
 var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP;
 var port    = process.env.OPENSHIFT_INTERNAL_PORT || 80;
-var dbhost  = process.env.OPENSHIFT_MONGO_DB_HOST;
-var dbport  = process.env.OPENSHIFT_MONGO_DB_PORT;
-var dbuname = process.env.OPENSHIFT_MONGO_DB_USERNAME;
-var dbpwd   = process.env.OPENSHIFT_MONGO_DB_PASSWORD;
+var dbhost  = process.env.OPENSHIFT_MONGODB_DB_HOST;
+var dbport  = process.env.OPENSHIFT_MONGODB_DB_PORT;
+var dbuname = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
+var dbpwd   = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
 
 // Establish connection to MongoDB
 mongoose.connect('mongodb://'+dbuname+':'+dbpwd+'@'+dbhost+':'+dbport+'/nodetest');
