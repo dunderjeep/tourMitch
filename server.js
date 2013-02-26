@@ -39,11 +39,11 @@ app.configure(function () {
 
 // set up the RESTful API, handler methods are defined in api.js
 var api = require('./controller/api.js');
-app.post('/dogtag', api.post);
-app.get('/dogtag/:lon/:lat/:dist?', api.near);
-app.get('/dogtag/:name/:descr/:latitude/:longitude?', api.save);
-app.get('/dogtag/:name.:format?', api.show);
-app.get('/dogtag', api.list);
+app.post('/POI', api.post);
+app.get('/POI/:lon/:lat/:dist?', api.near);
+app.get('/POI/:name/:descr/:latitude/:longitude/:pictureURL?', api.save);
+app.get('/POI/:name.:format?', api.show);
+app.get('/POI', api.list);
 
 
 //  And start the app on that interface (and port).
