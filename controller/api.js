@@ -23,22 +23,22 @@ exports.save = function(req, res) {
 }
 
 exports.list = function(req, res) {
-    POI.find(function(err, POI) {
+    POI.find(function(err, poi ) {
 	res.setHeader('Content-Type', 'text/javascript;charset=UTF-8');
-        res.send(req.query["callback"] + '({"records":' +  JSON.stringify(POI) + '});');
+        res.send(req.query["callback"] + '({"records":' +  JSON.stringify(poi ) + '});');
     });
 }
 
 exports.show = (function(req, res) {
-    POI.findOne({name: req.params.name}, function(error, POI) {
-        res.send([{Dog: POI}]);
+    POI.findOne({name: req.params.name}, function(error, poi ) {
+        res.send([{Dog: poi }]);
     })
 });
 
 exports.near = function(req, res) {
-    POI.find({coords : { $near : [req.params.lon, req.params.lat], $maxDistance : req.params.dist/68.91}}, function (error, POI) {        
+    POI.find({coords : { $near : [req.params.lon, req.params.lat], $maxDistance : req.params.dist/68.91}}, function (error, poi ) {        
         res.setHeader('Content-Type', 'text/javascript;charset=UTF-8');
-        res.send(req.query["callback"] +'({"records":' + JSON.stringify(POI) + '});');
+        res.send(req.query["callback"] +'({"records":' + JSON.stringify(poi ) + '});');
     })
 }
 
