@@ -5,8 +5,7 @@
         },
         "name": "Stauffer Library",
         "longitude": -76.496157,
-        "description": "The main Library located on Queens Campus",
-		"pictureURL" : "blank"
+        "description": "The main Library located on Queens Campus"
     }
 	,
 	{
@@ -16,7 +15,6 @@
         },
         "name": "Victoria Hall",
         "longitude": -76.498696,
-        "description": "The main Residence located on Queens Campus",
-		"pictureURL" : "blank"
+        "description": "The main Residence located on Queens Campus"
     }
 	]

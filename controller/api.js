@@ -2,7 +2,7 @@ var POI = require('../model/POI.js');
 
 exports.post = function(req, res) {
     var poi = new POI({name: req.body.name, description: req.body.descr,
-        longitude: req.body.longitude, latitude: req.body.latitude, pictureURL: req.body.pictureURL});
+        longitude: req.body.longitude, latitude: req.body.latitude});
     poi.save(function (err) {
         if (err) throw err;
         console.log('Task saved.');
@@ -13,7 +13,7 @@ exports.post = function(req, res) {
 
 exports.save = function(req, res) {
     var poi = new POI({name: req.params.name, description: req.params.descr,
-        longitude: req.params.longitude, latitude: req.params.latitude,pictureURL: req.params.pictureURL });
+        longitude: req.params.longitude, latitude: req.params.latitude});
     poi.save(function (err) {
         if (err) throw err;
         console.log('POI saved.');

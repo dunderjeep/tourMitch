@@ -41,7 +41,7 @@ app.configure(function () {
 var api = require('./controller/api.js');
 app.post('/POI', api.post);
 app.get('/POI/:lon/:lat/:dist?', api.near);
-app.get('/POI/:name/:descr/:latitude/:longitude/:pictureURL?', api.save);
+app.get('/POI/:name/:descr/:latitude/:longitude?', api.save);
 app.get('/POI/:name.:format?', api.show);
 app.get('/POI', api.list);
 
