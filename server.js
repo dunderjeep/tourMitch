@@ -39,11 +39,11 @@ app.configure(function () {
 
 // set up the RESTful API, handler methods are defined in api.js
 var api = require('./controller/api.js');
-app.post('/POI', api.post);
-app.get('/POI/:lon/:lat/:dist?', api.near);
-app.get('/POI/:name/:descr/:latitude/:longitude?', api.save);
-app.get('/POI/:name.:format?', api.show);
-app.get('/POI', api.list);
+app.post('/location', api.post);
+app.get('/location/:lon/:lat/:dist?', api.near);
+app.get('/location/:name/:descr/:latitude/:longitude?', api.save);
+app.get('/location/:name.:format?', api.show);
+app.get('/location', api.list);
 
 
 //  And start the app on that interface (and port).

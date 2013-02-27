@@ -1,9 +1,9 @@
 var POI = require('../model/POI.js');
 
 exports.post = function(req, res) {
-    var poi = new POI({name: req.body.name, description: req.body.descr,
+    var location = new POI({name: req.body.name, description: req.body.descr,
         longitude: req.body.longitude, latitude: req.body.latitude});
-    poi.save(function (err) {
+    location.save(function (err) {
         if (err) throw err;
         console.log('Task saved.');
         
@@ -12,9 +12,9 @@ exports.post = function(req, res) {
 }
 
 exports.save = function(req, res) {
-    var poi = new POI({name: req.params.name, description: req.params.descr,
+    var location = new POI({name: req.params.name, description: req.params.descr,
         longitude: req.params.longitude, latitude: req.params.latitude});
-    poi.save(function (err) {
+    location.save(function (err) {
         if (err) throw err;
         console.log('POI saved.');
 	
@@ -23,22 +23,22 @@ exports.save = function(req, res) {
 }
 
 exports.list = function(req, res) {
-    POI.find(function(err, poi ) {
+    POI.find(function(err, location ) {
 	res.setHeader('Content-Type', 'text/javascript;charset=UTF-8');
-        res.send(req.query["callback"] + '({"records":' +  JSON.stringify(poi ) + '});');
+        res.send(req.query["callback"] + '({"records":' +  JSON.stringify(location ) + '});');
     });
 }
 
 exports.show = (function(req, res) {
-    POI.findOne({name: req.params.name}, function(error, poi ) {
-        res.send([{Dog: poi }]);
+    POI.findOne({name: req.params.name}, function(error, location ) {
+        res.send([{Dog: location }]);
     })
 });
 
 exports.near = function(req, res) {
-    POI.find({coords : { $near : [req.params.lon, req.params.lat], $maxDistance : req.params.dist/68.91}}, function (error, poi ) {        
+    POI.find({coords : { $near : [req.params.lon, req.params.lat], $maxDistance : req.params.dist/68.91}}, function (error, location ) {        
         res.setHeader('Content-Type', 'text/javascript;charset=UTF-8');
-        res.send(req.query["callback"] +'({"records":' + JSON.stringify(poi ) + '});');
+        res.send(req.query["callback"] +'({"records":' + JSON.stringify(location ) + '});');
     })
 }
 
