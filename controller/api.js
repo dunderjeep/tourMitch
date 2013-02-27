@@ -13,7 +13,7 @@ exports.post = function(req, res) {
 
 exports.save = function(req, res) {
     var poi = new POI({name: req.params.name, description: req.params.descr,
-        longitude: req.params.longitude, latitude: req.params.latitude});
+        longitude: req.params.longitude, latitude: req.params.latitude,pictureURL: req.body.pictureURL });
     POI.save(function (err) {
         if (err) throw err;
         console.log('POI saved.');
