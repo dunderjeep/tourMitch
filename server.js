@@ -45,7 +45,7 @@ app.get('/dpoi/:name/:descr/:latitude/:longitude?', api.save);
 app.get('/poi/:name.:format?', api.show);
 app.get('/poi', api.list);
 // set up the RESTful API, handler methods are defined in apiTour.js
-var api2 = require('./controller/apiTour.js');
+var apiTour = require('./controller/apiTour.js');
 app.post('/tour', apiTour.post);
 app.get('/tour/:name/:descr?', apiTour.save);
 app.get('/tour/:name.:format?', apiTour.show);
