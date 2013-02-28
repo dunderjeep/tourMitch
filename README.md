@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 mongodb-poc
 ===========
 
@@ -16,3 +17,7 @@ But after the import you'll want to create an coords field and index it for geos
 db.dogtags.find().forEach( function (e) { e.coords = [ e.longitude, e.latitude ]; db.dogtags.save(e); });
 
 db.dogtags.ensureIndex( { coords : "2d" } );
+=======
+tourMitch
+=========
+>>>>>>> a053b640f534f173573d87955ed2b8753bbf6952
