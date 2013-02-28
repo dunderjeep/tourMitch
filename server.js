@@ -29,7 +29,7 @@ var dbuname = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
 var dbpwd   = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
 
 // Establish connection to MongoDB
-mongoose.connect('mongodb://'+dbuname+':'+dbpwd+'@'+dbhost+':'+dbport+'/tourdb');
+mongoose.connect('mongodb://'+dbuname+':'+dbpwd+'@'+dbhost+':'+dbport+'/nodetest');
 
 app.configure(function () {
     app.use(express.bodyParser());
@@ -39,11 +39,11 @@ app.configure(function () {
 
 // set up the RESTful API, handler methods are defined in api.js
 var api = require('./controller/api.js');
-app.post('/poi', api.post);
-app.get('/poi/:lon/:lat/:dist?', api.near);
-app.get('/poi/:name/:descr/:latitude/:longitude?', api.save);
-app.get('/poi/:name.:format?', api.show);
-app.get('/poi', api.list);
+app.post('/dogtag', api.post);
+app.get('/dogtag/:lon/:lat/:dist?', api.near);
+app.get('/dogtag/:name/:descr/:latitude/:longitude?', api.save);
+app.get('/dogtag/:name.:format?', api.show);
+app.get('/dogtag', api.list);
 
 
 //  And start the app on that interface (and port).
@@ -51,3 +51,4 @@ app.listen(port, ipaddr, function() {
    console.log('%s: Node server started on %s:%d ...', Date(Date.now() ),
                ipaddr, port);
 });
+
