@@ -1,4 +1,4 @@
-var POI = require('../model/POI.js');
+var POI = require('../model/poi.js');
 
 exports.post = function(req, res) {
     var location = new POI({name: req.body.name, description: req.body.descr,
