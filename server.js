@@ -29,7 +29,7 @@ var dbuname = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
 var dbpwd   = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
 
 // Establish connection to MongoDB
-mongoose.connect('mongodb://'+dbuname+':'+dbpwd+'@'+dbhost+':'+dbport+'/nodetest');
+mongoose.connect('mongodb://'+dbuname+':'+dbpwd+'@'+dbhost+':'+dbport+'/tourdb');
 
 app.configure(function () {
     app.use(express.bodyParser());
