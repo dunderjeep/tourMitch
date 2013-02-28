@@ -13,4 +13,4 @@ var poiSchema = new Schema({
 	//pictureURL: String
 });
 
-module.exports = mongoose.model('POI', poiSchema);
+module.exports = mongoose.model('poi', poiSchema);
