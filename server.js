@@ -44,6 +44,13 @@ app.get('/poi/:lon/:lat/:dist?', api.near);
 app.get('/dpoi/:name/:descr/:latitude/:longitude?', api.save);
 app.get('/poi/:name.:format?', api.show);
 app.get('/poi', api.list);
+// set up the RESTful API, handler methods are defined in apiTour.js
+var api = require('./controller/apiTour.js');
+app.post('/tour', api.post);
+app.get('/tour/:name/:descr?', api.save);
+app.get('/tour/:name.:format?', api.show);
+app.get('/tour', api.list);
+
 
 
 //  And start the app on that interface (and port).
