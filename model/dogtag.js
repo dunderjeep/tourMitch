@@ -23,7 +23,8 @@ var dtSchema = new Schema({
     description:String,
     date: {type: Date, default: Date.now},
     longitude: Number,
-    latitude: Number
+    latitude: Number,
+    tourname: String
 });
 
 module.exports = mongoose.model('DogTag', dtSchema);
