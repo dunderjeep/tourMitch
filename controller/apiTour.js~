@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-var poi = require('../model/tour.js');
+var poi = require('../model/poi.js');
 
 exports.post = function(req, res) {
     var tour = new Tour({name: req.body.name, description: req.body.descr});
@@ -23,30 +23,30 @@ exports.post = function(req, res) {
         if (err) throw err;
         console.log('Task saved.');
         
-        res.send('Tour saved.');
+        res.send('Dogtag saved.');
     });
 }
 
 exports.save = function(req, res) {
-    var tour = new Tour({name: req.params.name, description: req.params.descr});
-    tour.save(function (err) {
+    var dogtag = new DogTag({name: req.params.name, description: req.params.descr});
+    dogtag.save(function (err) {
         if (err) throw err;
-        console.log('Tour saved.');
+        console.log('Dogtag saved.');
 	
-        res.send('Tour saved.');
+        res.send('Dogtag saved.');
     });
 }
 
 exports.list = function(req, res) {
-    Tour.find(function(err, tour) {
+    DogTag.find(function(err, dogtag) {
 	res.setHeader('Content-Type', 'text/javascript;charset=UTF-8');
-        res.send(req.query["callback"] + '({"records":' +  JSON.stringify(tour) + '});');
+        res.send(req.query["callback"] + '({"records":' +  JSON.stringify(dogtag) + '});');
     });
 }
 
 exports.show = (function(req, res) {
-    Tour.findOne({name: req.params.name}, function(error, tour) {
-        res.send([{Tour: tour}]);
+    DogTag.findOne({name: req.params.name}, function(error, dogtag) {
+        res.send([{Dog: dogtag}]);
     })
 });
 
