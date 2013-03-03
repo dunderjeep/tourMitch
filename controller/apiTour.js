@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-var poi = require('../model/tour.js');
+var Tour = require('../model/tour.js');
 
 exports.post = function(req, res) {
     var tour = new Tour({name: req.body.name, description: req.body.descr});
