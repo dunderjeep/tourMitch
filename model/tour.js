@@ -17,6 +17,7 @@
 
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema;
+var poiSchema = require('./POI.js');
 
 var tourSchema = new Schema({
 	name: String,
@@ -25,4 +26,4 @@ var tourSchema = new Schema({
 	pois: [poiSchema]	
 });
 
-module.exports = mongoose.model('DogTag', dtSchema);
+module.exports = mongoose.model('Tour', tourSchema);
