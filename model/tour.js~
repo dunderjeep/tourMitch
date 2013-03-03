@@ -22,7 +22,8 @@ var tourSchema = new Schema({
 	name: String,
 	description: String,
 	date: {type: Date, default: Date.now},
-	pois: [poiSchema]	
+	pois: [poiSchema] 
+	
 });
 
 module.exports = mongoose.model('DogTag', dtSchema);
