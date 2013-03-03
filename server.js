@@ -46,9 +46,9 @@ app.get('/dogtag/:name.:format?', api.show);
 app.get('/dogtag', api.list);
 // set up the RESTful API, handler methods are defined in apiTour.js
 var apiTour = require('./controller/apiTour.js');
-//app.post('/tour', apiTour.post);
-//app.get('/tour/:name/:descr?', apiTour.save);
-//app.get('/tour/:name.:format?', apiTour.show);
+app.post('/tour', apiTour.post);
+app.get('/tour/:name/:descr?', apiTour.save);
+app.get('/tour/:name.:format?', apiTour.show);
 app.get('/tour', apiTour.list);
 
 
