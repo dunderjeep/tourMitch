@@ -50,3 +50,5 @@ exports.show = (function(req, res) {
     })
 });
 
+export.addPoi = 
+

@@ -10,6 +10,7 @@ var poiSchema = new Schema({
     date: {type: Date, default: Date.now},
     longitude: Number,
     latitude: Number,
+    tourName: String
 	//pictureURL: String
 });
 
