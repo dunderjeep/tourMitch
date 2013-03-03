@@ -49,7 +49,7 @@ app.get('/dogtag', api.list);
 //app.post('/tour', apiTour.post);
 //app.get('/tour/:name/:descr?', apiTour.save);
 //app.get('/tour/:name.:format?', apiTour.show);
-//app.get('/tour', apiTour.list);
+app.get('/tour', apiTour.list);
 
 
 
